@@ -1,0 +1,50 @@
+.grid-container{
+    display: grid;
+    grid-template-columns: 150px 200px;
+    grid-auto-rows: minmax(30px,auto);
+    grid-column-gap: 40px;
+    grid-row-gap: 30px;
+    border: solid black 1px;
+    padding:50px;
+    width: 33%;
+    justify-content: center;
+    margin: 0 auto;
+    background-image: radial-gradient(rgb(235, 205, 207),rgb(180, 220, 247));
+    border-radius: 2%;
+    box-shadow: 7px 7px 7px 7px rgb(92, 183, 243);
+    /* align-items: center; */
+    /* rgb(250, 159, 223) */
+
+}
+
+body{
+    background-color:rgb(235, 205, 207);
+}
+
+label{
+    font-size: 18px;
+
+}
+
+h1{
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.grid-item-7{
+    grid-column: span 2;
+    margin:20px;
+    justify-self: center;
+}
+
+button{
+    background-color:  rgb(180, 220, 247);
+    font-size: 18px;
+    height: 50px;
+    width: 50%;
+    border-radius: 1rem;
+}
+
+button:hover{  
+    background-color: rgb(235, 205, 207);
+}

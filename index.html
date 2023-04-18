@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>Currency Converter</h1>
+    <div class="grid-container">
+        <label for="amount" class="grid-item grid-item-1">Amount</label>
+        <input type="number" id="amount" class="grid-item grid-item-2">
+
+        <label for="from" class="grid-item grid-item-3">From</label>
+        <select name="" id="from" class="grid-item grid-item-4">
+            <option></option>
+            <option value="0">Indian Rupees</option>
+            <option value="1">Korean Won</option>
+            <option value="2">USD</option>
+        </select>
+
+        <label for="to" class="grid-item grid-item-5">To</label>
+        <select name="" id="to" class="grid-item grid-item-6">
+            <option value=""></option>
+            <option value="0">Indian Rupees</option>
+            <option value="1">Korean Won</option>
+            <option value="2">USD</option>
+        </select>
+
+        <button class="grid-item grid-item-7" onclick="convert()">Convert</button>
+
+        <label for="converted-amount" class="grid-item grid-item-8">Converted Amount</label>
+        <input readonly type="number" id="converted-amount" class="grid-item grid-item-9">
+    </div>
+
+    <script>
+        function convert()
+        {
+            var currencyVals = new Array(3);
+            for(var i=0; i<3;i++)
+            {  
+                currencyVals[i] = new Array(3);
+            }
+
+            currencyVals[0][0] = 1;
+            currencyVals[0][1] = 16.07;
+            currencyVals[0][2] = 0.012;
+
+            currencyVals[1][0] = 0.062;
+            currencyVals[1][1] = 1;
+            currencyVals[1][2] = 0.00076;
+
+            currencyVals[2][0] = 81.95;
+            currencyVals[2][1] = 1317.18;
+            currencyVals[2][2] = 1;
+
+            var multiplier = (currencyVals[parseInt(document.getElementById("from").value)][parseInt(document.getElementById("to").value)]); 
+            var convertedAmount =  multiplier * (parseFloat(document.getElementById("amount").value));
+
+            document.getElementById("converted-amount").value = convertedAmount;
+        }
+    </script>
+</body>
+</html>
